@@ -1,8 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import getJoke from '../api/jokeData';
 
-const Joke = () => {
+const Joke = (props) => {
   const [buttonText, setButtonText] = useState('Get A Joke');
+
+  const [laughter, setLaughter] = useState('');
+
+  useEffect(() => {
+    getJoke(props);
+    setLaughter();
+  }, [setLaughter]);
 
   const handleClick = () => {
     getJoke();
@@ -26,6 +33,7 @@ const Joke = () => {
       }}
     >
       <button type="button" onClick={handleClick}>{buttonText}</button>
+      {laughter}
     </div>
   );
 };
