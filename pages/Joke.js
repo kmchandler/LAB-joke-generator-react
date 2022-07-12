@@ -1,23 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import getJoke from '../api/jokeData';
 
-const Joke = (props) => {
+const Joke = () => {
   const [buttonText, setButtonText] = useState('Get A Joke');
 
   const [laughter, setLaughter] = useState('');
 
-  useEffect(() => {
-    getJoke(props);
-    setLaughter();
-  }, [setLaughter]);
+  const [showPunchline, setShowPunchline] = useState(false);
 
-  const handleClick = () => {
-    getJoke();
+  const handleClick = async () => {
     if (buttonText === 'Get A Joke') {
+      const jokeResponse = await getJoke();
+      setLaughter(jokeResponse);
       setButtonText('Get Punchline');
     } else if (buttonText === 'Get Punchline') {
+      setShowPunchline(true);
       setButtonText('Get Another Joke');
     } else if (buttonText === 'Get Another Joke') {
+      setLaughter('');
+      setShowPunchline(false);
       setButtonText('Get A Joke');
     }
   };
@@ -33,7 +34,8 @@ const Joke = (props) => {
       }}
     >
       <button type="button" onClick={handleClick}>{buttonText}</button>
-      {laughter}
+      <p>{laughter.setup}</p>
+      <p>{showPunchline && laughter.delivery}</p>
     </div>
   );
 };
