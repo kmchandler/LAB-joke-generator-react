@@ -27,15 +27,13 @@ const Joke = () => {
     <div
       className="text-center d-flex flex-column"
       style={{
-        height: '90vh',
         padding: '30px',
-        maxWidth: '210px',
         margin: '0 auto',
       }}
     >
-      <button type="button" onClick={handleClick}>{buttonText}</button>
-      <p>{laughter.setup}</p>
-      <p>{showPunchline && laughter.delivery}</p>
+      <button type="button" className="jokeButton" onClick={handleClick}>{buttonText}</button>
+      <p className="setup">{laughter.setup}</p>
+      <p className="punchline">{showPunchline && laughter.delivery}</p>
     </div>
   );
 };
