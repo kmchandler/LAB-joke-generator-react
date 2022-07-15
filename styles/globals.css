@@ -69,3 +69,8 @@ body {
   align-items: center;
   font-family: 'Oswald', sans-serif;
 }
+
+.navbar > .navContainer {
+  display: flex;
+  justify-content: center;
+}
