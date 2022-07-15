@@ -8,9 +8,7 @@ export default function NavBar() {
   return (
     <Navbar className="navCSS">
       <Container className="navContainer">
-        <p>
-          <Navbar className="navText">CLICK TO GET A JOKE</Navbar>
-        </p>
+        <p className="navText">CLICK TO GET A JOKE</p>
       </Container>
     </Navbar>
   );
