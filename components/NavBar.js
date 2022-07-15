@@ -6,7 +6,7 @@ import {
 
 export default function NavBar() {
   return (
-    <Navbar className="navCSS justify-content-center">
+    <Navbar className="navCSS">
       <Container className="navContainer">
         <p>
           <Navbar className="navText">CLICK TO GET A JOKE</Navbar>
