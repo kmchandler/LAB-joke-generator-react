@@ -75,10 +75,10 @@ body {
   justify-content: center;
 }
 
-.setup > body {
+.setup > .body {
   color: ivory;
 }
 
-.punchline > body {
+.punchline > .body {
   color: ivory;
 }
