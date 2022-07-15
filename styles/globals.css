@@ -74,3 +74,11 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.setup {
+  color: ivory;
+}
+
+.punchline {
+  color: ivory;
+}
